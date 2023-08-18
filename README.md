@@ -11,4 +11,4 @@ Is your fate To defeat it?
 Is Your Fate To Lose?
 
 
-Dont think Alone... Find Domeone To Help You In Your Journey
+Dont think Alone... Find Someone To Help You In Your Journey
