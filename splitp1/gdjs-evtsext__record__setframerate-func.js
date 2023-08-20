@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Record__SetFrameRate !== "undefined") {
 gdjs.evtsExt__Record__SetFrameRate = {};
 
 
-gdjs.evtsExt__Record__SetFrameRate.userFunc0x1089580 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Record__SetFrameRate.userFunc0x106a7b0 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 gdjs._extensionRecord.fps = eventsFunctionContext.getArgument('fps');
 
@@ -18,7 +18,7 @@ gdjs.evtsExt__Record__SetFrameRate.eventsList0 = function(runtimeScene, eventsFu
 {
 
 
-gdjs.evtsExt__Record__SetFrameRate.userFunc0x1089580(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Record__SetFrameRate.userFunc0x106a7b0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

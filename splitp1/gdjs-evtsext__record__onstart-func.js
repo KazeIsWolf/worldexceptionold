@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Record__OnStart !== "undefined") {
 gdjs.evtsExt__Record__OnStart = {};
 
 
-gdjs.evtsExt__Record__OnStart.userFunc0x10c3ed8 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Record__OnStart.userFunc0x1069b28 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 eventsFunctionContext.returnValue = gdjs._extensionRecord.handler.start;
 gdjs._extensionRecord.handler.start = false;
@@ -19,7 +19,7 @@ gdjs.evtsExt__Record__OnStart.eventsList0 = function(runtimeScene, eventsFunctio
 {
 
 
-gdjs.evtsExt__Record__OnStart.userFunc0x10c3ed8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Record__OnStart.userFunc0x1069b28(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

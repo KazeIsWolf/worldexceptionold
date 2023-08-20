@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Record__SetAudioBitRate !== "undefined") {
 gdjs.evtsExt__Record__SetAudioBitRate = {};
 
 
-gdjs.evtsExt__Record__SetAudioBitRate.userFunc0x1089580 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Record__SetAudioBitRate.userFunc0x1069b28 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 // Audio recording doesn't work. This function exsits for when it does.
 eventsFunctionContext.returnValue = gdjs._extensionRecord.mediaRecorder.audioBitsPerSecond;
@@ -19,7 +19,7 @@ gdjs.evtsExt__Record__SetAudioBitRate.eventsList0 = function(runtimeScene, event
 {
 
 
-gdjs.evtsExt__Record__SetAudioBitRate.userFunc0x1089580(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Record__SetAudioBitRate.userFunc0x1069b28(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

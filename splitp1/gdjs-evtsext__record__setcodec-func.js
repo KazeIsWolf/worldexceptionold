@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Record__SetCodec !== "undefined") {
 gdjs.evtsExt__Record__SetCodec = {};
 
 
-gdjs.evtsExt__Record__SetCodec.userFunc0x10c0b58 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Record__SetCodec.userFunc0x1069b28 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 gdjs._extensionRecord.options.codec = ';codecs=' + eventsFunctionContext.getArgument('codec');
 };
@@ -17,7 +17,7 @@ gdjs.evtsExt__Record__SetCodec.eventsList0 = function(runtimeScene, eventsFuncti
 {
 
 
-gdjs.evtsExt__Record__SetCodec.userFunc0x10c0b58(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Record__SetCodec.userFunc0x1069b28(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

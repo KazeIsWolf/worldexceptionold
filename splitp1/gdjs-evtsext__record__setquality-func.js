@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Record__SetQuality !== "undefined") {
 gdjs.evtsExt__Record__SetQuality = {};
 
 
-gdjs.evtsExt__Record__SetQuality.userFunc0x10c6100 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Record__SetQuality.userFunc0x106fd00 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 gdjs._extensionRecord.gif.videoQuality = eventsFunctionContext.getArgument('quality');
 };
@@ -17,7 +17,7 @@ gdjs.evtsExt__Record__SetQuality.eventsList0 = function(runtimeScene, eventsFunc
 {
 
 
-gdjs.evtsExt__Record__SetQuality.userFunc0x10c6100(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Record__SetQuality.userFunc0x106fd00(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

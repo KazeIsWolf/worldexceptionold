@@ -1,9 +1,38 @@
 gdjs.IntroCode = {};
 gdjs.IntroCode.GDNewSpriteObjects1= [];
 gdjs.IntroCode.GDNewSpriteObjects2= [];
+gdjs.IntroCode.GDNewSpriteObjects3= [];
 
 
 gdjs.IntroCode.eventsList0 = function(runtimeScene) {
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().getFromIndex(2), false);
+if (isConditionTrue_0) {
+{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Menu", false);
+}}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().getFromIndex(2), true);
+if (isConditionTrue_0) {
+{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "SplitScreen Test", false);
+}}
+
+}
+
+
+};gdjs.IntroCode.eventsList1 = function(runtimeScene) {
 
 {
 
@@ -35,8 +64,10 @@ for (var i = 0, k = 0, l = gdjs.IntroCode.GDNewSpriteObjects1.length;i<l;++i) {
 }
 gdjs.IntroCode.GDNewSpriteObjects1.length = k;
 if (isConditionTrue_0) {
-{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Menu", false);
-}}
+
+{ //Subevents
+gdjs.IntroCode.eventsList0(runtimeScene);} //End of subevents
+}
 
 }
 
@@ -48,8 +79,9 @@ runtimeScene.getOnceTriggers().startNewFrame();
 
 gdjs.IntroCode.GDNewSpriteObjects1.length = 0;
 gdjs.IntroCode.GDNewSpriteObjects2.length = 0;
+gdjs.IntroCode.GDNewSpriteObjects3.length = 0;
 
-gdjs.IntroCode.eventsList0(runtimeScene);
+gdjs.IntroCode.eventsList1(runtimeScene);
 
 return;
 

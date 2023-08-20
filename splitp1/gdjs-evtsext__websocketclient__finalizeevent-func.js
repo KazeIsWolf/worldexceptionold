@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__WebSocketClient__FinalizeEvent !== "undefined") {
 gdjs.evtsExt__WebSocketClient__FinalizeEvent = {};
 
 
-gdjs.evtsExt__WebSocketClient__FinalizeEvent.userFunc0x10a8460 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__WebSocketClient__FinalizeEvent.userFunc0x109a2c0 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 gdjs.evtTools.wsClient.events.pop();
 
@@ -18,7 +18,7 @@ gdjs.evtsExt__WebSocketClient__FinalizeEvent.eventsList0 = function(runtimeScene
 {
 
 
-gdjs.evtsExt__WebSocketClient__FinalizeEvent.userFunc0x10a8460(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__WebSocketClient__FinalizeEvent.userFunc0x109a2c0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

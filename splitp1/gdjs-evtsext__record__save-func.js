@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Record__Save !== "undefined") {
 gdjs.evtsExt__Record__Save = {};
 
 
-gdjs.evtsExt__Record__Save.userFunc0x1089580 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Record__Save.userFunc0x109c978 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 const recorder = gdjs._extensionRecord;
 const path = eventsFunctionContext.getArgument('path');
@@ -49,7 +49,7 @@ gdjs.evtsExt__Record__Save.eventsList0 = function(runtimeScene, eventsFunctionCo
 {
 
 
-gdjs.evtsExt__Record__Save.userFunc0x1089580(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Record__Save.userFunc0x109c978(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

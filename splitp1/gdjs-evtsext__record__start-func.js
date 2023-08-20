@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Record__Start !== "undefined") {
 gdjs.evtsExt__Record__Start = {};
 
 
-gdjs.evtsExt__Record__Start.userFunc0x1089580 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Record__Start.userFunc0x1085c58 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 const recorder = gdjs._extensionRecord;
 const canvas = runtimeScene.getGame().getRenderer().getCanvas();
@@ -47,7 +47,7 @@ gdjs.evtsExt__Record__Start.eventsList0 = function(runtimeScene, eventsFunctionC
 {
 
 
-gdjs.evtsExt__Record__Start.userFunc0x1089580(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Record__Start.userFunc0x1085c58(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__ExtendedVariables__SceneVariableExist !== "undefined") 
 gdjs.evtsExt__ExtendedVariables__SceneVariableExist = {};
 
 
-gdjs.evtsExt__ExtendedVariables__SceneVariableExist.userFunc0x15ab6e8 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ExtendedVariables__SceneVariableExist.userFunc0x15b6028 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 const sceneVariables = runtimeScene.getVariables();
 eventsFunctionContext.returnValue = sceneVariables.has(eventsFunctionContext.getArgument("SceneVariableName"));
@@ -18,7 +18,7 @@ gdjs.evtsExt__ExtendedVariables__SceneVariableExist.eventsList0 = function(runti
 {
 
 
-gdjs.evtsExt__ExtendedVariables__SceneVariableExist.userFunc0x15ab6e8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ExtendedVariables__SceneVariableExist.userFunc0x15b6028(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

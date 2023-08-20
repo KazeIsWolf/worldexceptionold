@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Record__SetFormat !== "undefined") {
 gdjs.evtsExt__Record__SetFormat = {};
 
 
-gdjs.evtsExt__Record__SetFormat.userFunc0x10bb1d0 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Record__SetFormat.userFunc0x1069b28 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 const format = eventsFunctionContext.getArgument('format');
 const supported = gdjs._extensionRecord.isFormatSupported(format);
@@ -22,7 +22,7 @@ gdjs.evtsExt__Record__SetFormat.eventsList0 = function(runtimeScene, eventsFunct
 {
 
 
-gdjs.evtsExt__Record__SetFormat.userFunc0x10bb1d0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Record__SetFormat.userFunc0x1069b28(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

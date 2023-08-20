@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Record__Dithering !== "undefined") {
 gdjs.evtsExt__Record__Dithering = {};
 
 
-gdjs.evtsExt__Record__Dithering.userFunc0x10c8bf0 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Record__Dithering.userFunc0x1069b28 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 eventsFunctionContext.returnValue = gdjs._extensionRecord.gif.videoDithering;
 
@@ -18,7 +18,7 @@ gdjs.evtsExt__Record__Dithering.eventsList0 = function(runtimeScene, eventsFunct
 {
 
 
-gdjs.evtsExt__Record__Dithering.userFunc0x10c8bf0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Record__Dithering.userFunc0x1069b28(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

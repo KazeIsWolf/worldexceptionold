@@ -1,9 +1,9 @@
 gdjs.IFrame_32TestCode = {};
 
 
-gdjs.IFrame_32TestCode.asyncCallback22626932 = function (runtimeScene, asyncObjectsList) {
-{gdjs.evtsExt__Iframe__Create.func(runtimeScene, "Game1", "https://itch.io/embed-upload/8509589?color=333333", gdjs.evtTools.window.getGameResolutionWidth(runtimeScene) / 2, gdjs.evtTools.window.getGameResolutionHeight(runtimeScene) / 2, gdjs.evtTools.window.getGameResolutionWidth(runtimeScene) / 6, 25, false, false, "", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
-}{gdjs.evtsExt__Iframe__Create.func(runtimeScene, "Game2", "https://itch.io/embed-upload/8509614?color=333333", gdjs.evtTools.window.getGameResolutionWidth(runtimeScene) / 2, gdjs.evtTools.window.getGameResolutionHeight(runtimeScene) / 2, gdjs.evtTools.window.getGameResolutionWidth(runtimeScene) / 6, gdjs.evtTools.window.getGameResolutionHeight(runtimeScene) / 2 + 25, false, false, "", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+gdjs.IFrame_32TestCode.asyncCallback22627068 = function (runtimeScene, asyncObjectsList) {
+{gdjs.evtsExt__Iframe__Create.func(runtimeScene, "Game1", "https://redninjabr.github.io/worldexception/splitp1/", gdjs.evtTools.window.getGameResolutionWidth(runtimeScene) / 2, gdjs.evtTools.window.getGameResolutionHeight(runtimeScene) / 2, gdjs.evtTools.window.getGameResolutionWidth(runtimeScene) / 6, 25, false, false, "", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+}{gdjs.evtsExt__Iframe__Create.func(runtimeScene, "Game2", "https://redninjabr.github.io/worldexception/splitp2/", gdjs.evtTools.window.getGameResolutionWidth(runtimeScene) / 2, gdjs.evtTools.window.getGameResolutionHeight(runtimeScene) / 2, gdjs.evtTools.window.getGameResolutionWidth(runtimeScene) / 6, gdjs.evtTools.window.getGameResolutionHeight(runtimeScene) / 2 + 25, false, false, "", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }}
 gdjs.IFrame_32TestCode.eventsList0 = function(runtimeScene) {
 
@@ -13,7 +13,7 @@ gdjs.IFrame_32TestCode.eventsList0 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), (runtimeScene) => (gdjs.IFrame_32TestCode.asyncCallback22626932(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), (runtimeScene) => (gdjs.IFrame_32TestCode.asyncCallback22627068(runtimeScene, asyncObjectsList)));
 }
 }
 

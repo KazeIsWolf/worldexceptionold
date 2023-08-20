@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Record__OnError !== "undefined") {
 gdjs.evtsExt__Record__OnError = {};
 
 
-gdjs.evtsExt__Record__OnError.userFunc0x10c3ed8 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Record__OnError.userFunc0x1069b28 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 eventsFunctionContext.returnValue = gdjs._extensionRecord.handler.error.event;
 gdjs._extensionRecord.handler.error.event = false;
@@ -18,7 +18,7 @@ gdjs.evtsExt__Record__OnError.eventsList0 = function(runtimeScene, eventsFunctio
 {
 
 
-gdjs.evtsExt__Record__OnError.userFunc0x10c3ed8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Record__OnError.userFunc0x1069b28(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

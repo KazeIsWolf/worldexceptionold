@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Record__Quality !== "undefined") {
 gdjs.evtsExt__Record__Quality = {};
 
 
-gdjs.evtsExt__Record__Quality.userFunc0x10c3ed8 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Record__Quality.userFunc0x1069b28 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 eventsFunctionContext.returnValue = gdjs._extensionRecord.gif.videoQuality;
 
@@ -18,7 +18,7 @@ gdjs.evtsExt__Record__Quality.eventsList0 = function(runtimeScene, eventsFunctio
 {
 
 
-gdjs.evtsExt__Record__Quality.userFunc0x10c3ed8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Record__Quality.userFunc0x1069b28(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
