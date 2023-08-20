@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Record__Format !== "undefined") {
 gdjs.evtsExt__Record__Format = {};
 
 
-gdjs.evtsExt__Record__Format.userFunc0x10d92a8 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Record__Format.userFunc0x108c048 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 eventsFunctionContext.returnValue = gdjs._extensionRecord.mediaRecorder.options.format;
 
@@ -18,7 +18,7 @@ gdjs.evtsExt__Record__Format.eventsList0 = function(runtimeScene, eventsFunction
 {
 
 
-gdjs.evtsExt__Record__Format.userFunc0x10d92a8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Record__Format.userFunc0x108c048(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

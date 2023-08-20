@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Record__VideoBitRate !== "undefined") {
 gdjs.evtsExt__Record__VideoBitRate = {};
 
 
-gdjs.evtsExt__Record__VideoBitRate.userFunc0xd98d10 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Record__VideoBitRate.userFunc0x1089580 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 eventsFunctionContext.returnValue = gdjs._extensionRecord.mediaRecorder.videoBitsPerSecond;
 
@@ -18,7 +18,7 @@ gdjs.evtsExt__Record__VideoBitRate.eventsList0 = function(runtimeScene, eventsFu
 {
 
 
-gdjs.evtsExt__Record__VideoBitRate.userFunc0xd98d10(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Record__VideoBitRate.userFunc0x1089580(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

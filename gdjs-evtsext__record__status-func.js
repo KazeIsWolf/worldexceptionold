@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Record__Status !== "undefined") {
 gdjs.evtsExt__Record__Status = {};
 
 
-gdjs.evtsExt__Record__Status.userFunc0x10d92a8 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Record__Status.userFunc0x1089580 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 if (gdjs._extensionRecord.mediaRecorder) eventsFunctionContext.returnValue = gdjs._extensionRecord.mediaRecorder.state;
 
@@ -18,7 +18,7 @@ gdjs.evtsExt__Record__Status.eventsList0 = function(runtimeScene, eventsFunction
 {
 
 
-gdjs.evtsExt__Record__Status.userFunc0x10d92a8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Record__Status.userFunc0x1089580(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

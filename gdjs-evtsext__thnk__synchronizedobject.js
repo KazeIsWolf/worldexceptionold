@@ -59,7 +59,7 @@ gdjs.evtsExt__THNK__SynchronizedObject.SynchronizedObject.prototype.doStepPreEve
 gdjs.evtsExt__THNK__SynchronizedObject.SynchronizedObject.prototype.doStepPreEventsContext.GDObjectObjects2= [];
 
 
-gdjs.evtsExt__THNK__SynchronizedObject.SynchronizedObject.prototype.doStepPreEventsContext.userFunc0x10e0e18 = function(runtimeScene, objects, eventsFunctionContext) {
+gdjs.evtsExt__THNK__SynchronizedObject.SynchronizedObject.prototype.doStepPreEventsContext.userFunc0xf5ebb0 = function(runtimeScene, objects, eventsFunctionContext) {
 "use strict";
 if (runtimeScene.thnkServer)
     runtimeScene.thnkServer.objectsRegistery.registerObject(objects[0]);
@@ -85,7 +85,7 @@ gdjs.evtsExt__THNK__SynchronizedObject.SynchronizedObject.prototype.doStepPreEve
 
 var objects = [];
 objects.push.apply(objects,gdjs.evtsExt__THNK__SynchronizedObject.SynchronizedObject.prototype.doStepPreEventsContext.GDObjectObjects1);
-gdjs.evtsExt__THNK__SynchronizedObject.SynchronizedObject.prototype.doStepPreEventsContext.userFunc0x10e0e18(runtimeScene, objects, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__THNK__SynchronizedObject.SynchronizedObject.prototype.doStepPreEventsContext.userFunc0xf5ebb0(runtimeScene, objects, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -191,7 +191,7 @@ gdjs.evtsExt__THNK__SynchronizedObject.SynchronizedObject.prototype.onDestroyCon
 gdjs.evtsExt__THNK__SynchronizedObject.SynchronizedObject.prototype.onDestroyContext.GDObjectObjects1= [];
 
 
-gdjs.evtsExt__THNK__SynchronizedObject.SynchronizedObject.prototype.onDestroyContext.userFunc0x16262f0 = function(runtimeScene, objects, eventsFunctionContext) {
+gdjs.evtsExt__THNK__SynchronizedObject.SynchronizedObject.prototype.onDestroyContext.userFunc0x1178a90 = function(runtimeScene, objects, eventsFunctionContext) {
 "use strict";
 if (runtimeScene.thnkServer)
     runtimeScene.thnkServer.objectsRegistery.unregisterObject(objects[0]);
@@ -205,7 +205,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__THNK__S
 
 var objects = [];
 objects.push.apply(objects,gdjs.evtsExt__THNK__SynchronizedObject.SynchronizedObject.prototype.onDestroyContext.GDObjectObjects1);
-gdjs.evtsExt__THNK__SynchronizedObject.SynchronizedObject.prototype.onDestroyContext.userFunc0x16262f0(runtimeScene, objects, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__THNK__SynchronizedObject.SynchronizedObject.prototype.onDestroyContext.userFunc0x1178a90(runtimeScene, objects, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

@@ -9,7 +9,7 @@ gdjs.evtsExt__THNK__UseLinkedObjects = {};
 gdjs.evtsExt__THNK__UseLinkedObjects.GDObjectObjects1= [];
 
 
-gdjs.evtsExt__THNK__UseLinkedObjects.userFunc0x119a870 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__THNK__UseLinkedObjects.userFunc0xef5d88 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 THNK.players.pickOwnedObjects(eventsFunctionContext.getObjectsLists("Object"));
 eventsFunctionContext.returnValue = true;
@@ -20,7 +20,7 @@ gdjs.evtsExt__THNK__UseLinkedObjects.eventsList0 = function(runtimeScene, events
 {
 
 
-gdjs.evtsExt__THNK__UseLinkedObjects.userFunc0x119a870(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__THNK__UseLinkedObjects.userFunc0xef5d88(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

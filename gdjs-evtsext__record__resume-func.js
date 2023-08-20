@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Record__Resume !== "undefined") {
 gdjs.evtsExt__Record__Resume = {};
 
 
-gdjs.evtsExt__Record__Resume.userFunc0x7e0bf0 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Record__Resume.userFunc0x1089580 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 if (gdjs._extensionRecord.mediaRecorder) gdjs._extensionRecord.mediaRecorder.resume();
 else gdjs._extensionRecord.setError('Resuming a recording that has not started');
@@ -18,7 +18,7 @@ gdjs.evtsExt__Record__Resume.eventsList0 = function(runtimeScene, eventsFunction
 {
 
 
-gdjs.evtsExt__Record__Resume.userFunc0x7e0bf0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Record__Resume.userFunc0x1089580(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

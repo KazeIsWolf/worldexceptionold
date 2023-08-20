@@ -15,7 +15,7 @@ gdjs.evtsExt__TwitchChatHandler__onScenePostEvents.eventsList0 = function(runtim
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(20238484);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(21390028);
 }
 if (isConditionTrue_0) {
 {gdjs.evtsExt__WebSocketClient__Send.func(runtimeScene, "PASS " + gdjs.evtTools.variable.getVariableString(runtimeScene.getScene().getVariables().get("Twitch").getChild("Token")), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));

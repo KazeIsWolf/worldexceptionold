@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Record__SetDithering !== "undefined") {
 gdjs.evtsExt__Record__SetDithering = {};
 
 
-gdjs.evtsExt__Record__SetDithering.userFunc0xd88e80 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Record__SetDithering.userFunc0x10c8bf0 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 gdjs._extensionRecord.gif.videoDithering = eventsFunctionContext.getArgument('dithering');
 };
@@ -17,7 +17,7 @@ gdjs.evtsExt__Record__SetDithering.eventsList0 = function(runtimeScene, eventsFu
 {
 
 
-gdjs.evtsExt__Record__SetDithering.userFunc0xd88e80(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Record__SetDithering.userFunc0x10c8bf0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

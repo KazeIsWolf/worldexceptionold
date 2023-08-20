@@ -17,6 +17,7 @@ gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText = class ChatBoxText ext
     );
     
     this._behaviorData.ScrollType = "Down Scroll";
+    this._behaviorData.AutoDelete = behaviorData.AutoDelete !== undefined ? behaviorData.AutoDelete : true;
     this._behaviorData.MaxMessages = behaviorData.MaxMessages !== undefined ? behaviorData.MaxMessages : Number("6") || 0;
   }
 
@@ -25,6 +26,8 @@ gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText = class ChatBoxText ext
     
     if (oldBehaviorData.ScrollType !== newBehaviorData.ScrollType)
       this._behaviorData.ScrollType = newBehaviorData.ScrollType;
+    if (oldBehaviorData.AutoDelete !== newBehaviorData.AutoDelete)
+      this._behaviorData.AutoDelete = newBehaviorData.AutoDelete;
     if (oldBehaviorData.MaxMessages !== newBehaviorData.MaxMessages)
       this._behaviorData.MaxMessages = newBehaviorData.MaxMessages;
 
@@ -38,6 +41,15 @@ gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText = class ChatBoxText ext
   }
   _setScrollType(newValue) {
     this._behaviorData.ScrollType = newValue;
+  }
+  _getAutoDelete() {
+    return this._behaviorData.AutoDelete !== undefined ? this._behaviorData.AutoDelete : true;
+  }
+  _setAutoDelete(newValue) {
+    this._behaviorData.AutoDelete = newValue;
+  }
+  _toggleAutoDelete() {
+    this._setAutoDelete(!this._getAutoDelete());
   }
   _getMaxMessages() {
     return this._behaviorData.MaxMessages !== undefined ? this._behaviorData.MaxMessages : Number("6") || 0;
@@ -96,7 +108,7 @@ gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintRawMessa
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintRawMessageContext.GDObjectObjects1 */
 {for(var i = 0, len = gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintRawMessageContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintRawMessageContext.GDObjectObjects1[i].setString(gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintRawMessageContext.GDObjectObjects1[i].getString() + (gdjs.evtsExt__TwitchChatHandler__ChatMessageRaw.func(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))));
+    gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintRawMessageContext.GDObjectObjects1[i].setString(gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintRawMessageContext.GDObjectObjects1[i].getString() + (gdjs.evtsExt__TwitchChatHandler__ServerRawMessage.func(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))));
 }
 }{for(var i = 0, len = gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintRawMessageContext.GDObjectObjects1.length ;i < len;++i) {
     gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintRawMessageContext.GDObjectObjects1[i].returnVariable(gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintRawMessageContext.GDObjectObjects1[i].getVariables().get("Twitch").getChild("Messages")).add(1);
@@ -198,7 +210,7 @@ gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintMessageC
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintMessageContext.GDObjectObjects1 */
 {for(var i = 0, len = gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintMessageContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintMessageContext.GDObjectObjects1[i].setString(gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintMessageContext.GDObjectObjects1[i].getString() + (gdjs.evtsExt__TwitchChatHandler__ChatMessage.func(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))));
+    gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintMessageContext.GDObjectObjects1[i].setString(gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintMessageContext.GDObjectObjects1[i].getString() + (gdjs.evtsExt__TwitchChatHandler__UserChatMessage.func(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))));
 }
 }{for(var i = 0, len = gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintMessageContext.GDObjectObjects1.length ;i < len;++i) {
     gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintMessageContext.GDObjectObjects1[i].returnVariable(gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintMessageContext.GDObjectObjects1[i].getVariables().get("Twitch").getChild("Messages")).add(1);
@@ -215,11 +227,11 @@ if (isConditionTrue_0) {
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = (gdjs.evtsExt__TwitchChatHandler__ChatMessage.func(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) != "undefined");
+{isConditionTrue_0 = (gdjs.evtsExt__TwitchChatHandler__UserChatMessage.func(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) != "undefined");
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = (gdjs.evtsExt__TwitchChatHandler__ChatMessage.func(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) != gdjs.evtTools.string.newLine());
+{isConditionTrue_0 = (gdjs.evtsExt__TwitchChatHandler__UserChatMessage.func(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) != gdjs.evtTools.string.newLine());
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
@@ -328,7 +340,7 @@ gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintCommandC
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintCommandContext.GDObjectObjects1 */
 {for(var i = 0, len = gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintCommandContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintCommandContext.GDObjectObjects1[i].setString(gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintCommandContext.GDObjectObjects1[i].getString() + (gdjs.evtsExt__TwitchChatHandler__ChatMessage.func(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))));
+    gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintCommandContext.GDObjectObjects1[i].setString(gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintCommandContext.GDObjectObjects1[i].getString() + (gdjs.evtsExt__TwitchChatHandler__UserChatMessage.func(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))));
 }
 }{for(var i = 0, len = gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintCommandContext.GDObjectObjects1.length ;i < len;++i) {
     gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintCommandContext.GDObjectObjects1[i].returnVariable(gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.PrintCommandContext.GDObjectObjects1[i].getVariables().get("Twitch").getChild("Messages")).add(1);
@@ -345,11 +357,11 @@ if (isConditionTrue_0) {
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = (gdjs.evtsExt__TwitchChatHandler__ChatMessage.func(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) != "undefined");
+{isConditionTrue_0 = (gdjs.evtsExt__TwitchChatHandler__UserChatMessage.func(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) != "undefined");
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = (gdjs.evtsExt__TwitchChatHandler__ChatMessage.func(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) != gdjs.evtTools.string.newLine());
+{isConditionTrue_0 = (gdjs.evtsExt__TwitchChatHandler__UserChatMessage.func(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) != gdjs.evtTools.string.newLine());
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
@@ -465,6 +477,17 @@ for (var i = 0, k = 0, l = gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxT
     }
 }
 gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.doStepPreEventsContext.GDObjectObjects1.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.doStepPreEventsContext.GDObjectObjects1.length;i<l;++i) {
+    if ( gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getAutoDelete() ) {
+        isConditionTrue_0 = true;
+        gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.doStepPreEventsContext.GDObjectObjects1[k] = gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.doStepPreEventsContext.GDObjectObjects1[i];
+        ++k;
+    }
+}
+gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.doStepPreEventsContext.GDObjectObjects1.length = k;
+}
 }
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__TwitchChatHandler__ChatBoxText.ChatBoxText.prototype.doStepPreEventsContext.GDObjectObjects1 */

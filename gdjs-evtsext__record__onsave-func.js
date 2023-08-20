@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Record__OnSave !== "undefined") {
 gdjs.evtsExt__Record__OnSave = {};
 
 
-gdjs.evtsExt__Record__OnSave.userFunc0x10d92a8 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Record__OnSave.userFunc0x10c3ed8 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 eventsFunctionContext.returnValue = gdjs._extensionRecord.handler.save;
 gdjs._extensionRecord.handler.save = false;
@@ -18,7 +18,7 @@ gdjs.evtsExt__Record__OnSave.eventsList0 = function(runtimeScene, eventsFunction
 {
 
 
-gdjs.evtsExt__Record__OnSave.userFunc0x10d92a8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Record__OnSave.userFunc0x10c3ed8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

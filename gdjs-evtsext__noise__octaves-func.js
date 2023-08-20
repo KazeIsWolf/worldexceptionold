@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Noise__Octaves !== "undefined") {
 gdjs.evtsExt__Noise__Octaves = {};
 
 
-gdjs.evtsExt__Noise__Octaves.userFunc0x1515dd8 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Noise__Octaves.userFunc0x15f1f88 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 const name = eventsFunctionContext.getArgument("Name");
 
@@ -19,7 +19,7 @@ gdjs.evtsExt__Noise__Octaves.eventsList0 = function(runtimeScene, eventsFunction
 {
 
 
-gdjs.evtsExt__Noise__Octaves.userFunc0x1515dd8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Noise__Octaves.userFunc0x15f1f88(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

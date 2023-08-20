@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Record__onFirstSceneLoaded !== "undefined") {
 gdjs.evtsExt__Record__onFirstSceneLoaded = {};
 
 
-gdjs.evtsExt__Record__onFirstSceneLoaded.userFunc0x10163b0 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Record__onFirstSceneLoaded.userFunc0x1089638 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 let tempElectron;
 let tempFS;
@@ -87,7 +87,7 @@ gdjs.evtsExt__Record__onFirstSceneLoaded.eventsList0 = function(runtimeScene, ev
 {
 
 
-gdjs.evtsExt__Record__onFirstSceneLoaded.userFunc0x10163b0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Record__onFirstSceneLoaded.userFunc0x1089638(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

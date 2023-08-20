@@ -67,7 +67,7 @@
 	<script src="events-tools/stringtools.js" crossorigin="anonymous"></script>
 	<script src="events-tools/windowtools.js" crossorigin="anonymous"></script>
 	<script src="events-tools/networktools.js" crossorigin="anonymous"></script>
-	<script src="splash/gd-logo-light.js" crossorigin="anonymous"></script>
+	<script src="splash/gd-logo-dark.js" crossorigin="anonymous"></script>
 	<script src="pixi-renderers/pixi.js" crossorigin="anonymous"></script>
 	<script src="pixi-renderers/pixi-filters-tools.js" crossorigin="anonymous"></script>
 	<script src="pixi-renderers/runtimegame-pixi-renderer.js" crossorigin="anonymous"></script>
@@ -188,6 +188,8 @@
 	<script src="gdjs-evtsext__getpropertiesdata__returnverticalsync-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__getpropertiesdata__returnwindowheight-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__getpropertiesdata__returnwindowwidth-func.js" crossorigin="anonymous"></script>
+	<script src="gdjs-evtsext__iframe__create-func.js" crossorigin="anonymous"></script>
+	<script src="gdjs-evtsext__iframe__delete-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__internetconnectivity__isdeviceonline-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__noise__create-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__noise__delete-func.js" crossorigin="anonymous"></script>
@@ -251,13 +253,6 @@
 	<script src="gdjs-evtsext__record__status-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__record__stop-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__record__videobitrate-func.js" crossorigin="anonymous"></script>
-	<script src="gdjs-evtsext__regex__find-func.js" crossorigin="anonymous"></script>
-	<script src="gdjs-evtsext__regex__getallmatches-func.js" crossorigin="anonymous"></script>
-	<script src="gdjs-evtsext__regex__getallmatchesandgroups-func.js" crossorigin="anonymous"></script>
-	<script src="gdjs-evtsext__regex__getfirstmatchandgroups-func.js" crossorigin="anonymous"></script>
-	<script src="gdjs-evtsext__regex__haspattern-func.js" crossorigin="anonymous"></script>
-	<script src="gdjs-evtsext__regex__replace-func.js" crossorigin="anonymous"></script>
-	<script src="gdjs-evtsext__regex__split-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__thnk_____client___-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__thnk_____server___-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__thnk__connectingtoserver-func.js" crossorigin="anonymous"></script>
@@ -286,14 +281,17 @@
 	<script src="gdjs-evtsext__thnk_p2p__startserver-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__twitchchathandler__chatboxbbtext.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__twitchchathandler__chatboxtext.js" crossorigin="anonymous"></script>
-	<script src="gdjs-evtsext__twitchchathandler__chatmessage-func.js" crossorigin="anonymous"></script>
-	<script src="gdjs-evtsext__twitchchathandler__chatmessageraw-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__twitchchathandler__commandmessage-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__twitchchathandler__connect-func.js" crossorigin="anonymous"></script>
+	<script src="gdjs-evtsext__twitchchathandler__lastmessageusername-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__twitchchathandler__oncommandreceived-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__twitchchathandler__onfirstsceneloaded-func.js" crossorigin="anonymous"></script>
+	<script src="gdjs-evtsext__twitchchathandler__onlychatmessage-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__twitchchathandler__onmessagereceived-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__twitchchathandler__onscenepostevents-func.js" crossorigin="anonymous"></script>
+	<script src="gdjs-evtsext__twitchchathandler__sendchatmessage-func.js" crossorigin="anonymous"></script>
+	<script src="gdjs-evtsext__twitchchathandler__serverrawmessage-func.js" crossorigin="anonymous"></script>
+	<script src="gdjs-evtsext__twitchchathandler__userchatmessage-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__websocketclient__connect-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__websocketclient__data-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__websocketclient__disconnect-func.js" crossorigin="anonymous"></script>
@@ -307,6 +305,7 @@
 	<script src="gdjs-evtsext__websocketclient__onfirstsceneloaded-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__websocketclient__onscenepostevents-func.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__websocketclient__send-func.js" crossorigin="anonymous"></script>
+	<script src="Extensions/AdvancedWindow/electron-advancedwindowtools.js" crossorigin="anonymous"></script>
 	<script src="Extensions/AnchorBehavior/anchorruntimebehavior.js" crossorigin="anonymous"></script>
 	<script src="Extensions/BBText/bbtextruntimeobject-pixi-renderer.js" crossorigin="anonymous"></script>
 	<script src="Extensions/BBText/bbtextruntimeobject.js" crossorigin="anonymous"></script>
@@ -327,11 +326,12 @@
 	<script src="Extensions/P2P/B_p2ptools.js" crossorigin="anonymous"></script>
 	<script src="Extensions/PanelSpriteObject/panelspriteruntimeobject-pixi-renderer.js" crossorigin="anonymous"></script>
 	<script src="Extensions/PanelSpriteObject/panelspriteruntimeobject.js" crossorigin="anonymous"></script>
+	<script src="Extensions/ParticleSystem/particleemitterobject-pixi-renderer.js" crossorigin="anonymous"></script>
+	<script src="Extensions/ParticleSystem/particleemitterobject.js" crossorigin="anonymous"></script>
+	<script src="Extensions/ParticleSystem/pixi-particles-pixi-renderer.min.js" crossorigin="anonymous"></script>
 	<script src="Extensions/PlatformBehavior/platformerobjectruntimebehavior.js" crossorigin="anonymous"></script>
 	<script src="Extensions/PlatformBehavior/platformruntimebehavior.js" crossorigin="anonymous"></script>
 	<script src="Extensions/PlatformBehavior/platformtools.js" crossorigin="anonymous"></script>
-	<script src="Extensions/PlayerAuthentication/playerauthenticationcomponents.js" crossorigin="anonymous"></script>
-	<script src="Extensions/PlayerAuthentication/playerauthenticationtools.js" crossorigin="anonymous"></script>
 	<script src="Extensions/TextInput/textinputruntimeobject-pixi-renderer.js" crossorigin="anonymous"></script>
 	<script src="Extensions/TextInput/textinputruntimeobject.js" crossorigin="anonymous"></script>
 	<script src="Extensions/TextObject/textruntimeobject-pixi-renderer.js" crossorigin="anonymous"></script>
@@ -349,6 +349,9 @@
 	<script src="code2.js" crossorigin="anonymous"></script>
 	<script src="code3.js" crossorigin="anonymous"></script>
 	<script src="code4.js" crossorigin="anonymous"></script>
+	<script src="code5.js" crossorigin="anonymous"></script>
+	<script src="code6.js" crossorigin="anonymous"></script>
+	<script src="code7.js" crossorigin="anonymous"></script>
 	<script src="data.js" crossorigin="anonymous"></script>
 
 

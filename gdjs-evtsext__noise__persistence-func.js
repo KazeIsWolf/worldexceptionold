@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Noise__Persistence !== "undefined") {
 gdjs.evtsExt__Noise__Persistence = {};
 
 
-gdjs.evtsExt__Noise__Persistence.userFunc0x1515dd8 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Noise__Persistence.userFunc0x15f8aa0 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 const name = eventsFunctionContext.getArgument("Name");
 
@@ -19,7 +19,7 @@ gdjs.evtsExt__Noise__Persistence.eventsList0 = function(runtimeScene, eventsFunc
 {
 
 
-gdjs.evtsExt__Noise__Persistence.userFunc0x1515dd8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Noise__Persistence.userFunc0x15f8aa0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
