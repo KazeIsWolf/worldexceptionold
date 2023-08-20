@@ -1,0 +1,2482 @@
+{
+  "author": "",
+  "category": "Third-party",
+  "extensionNamespace": "",
+  "fullName": "Twitch Chat Handler Plugin",
+  "helpPath": "",
+  "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLXR3aXRjaCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGQ9Ik0xMS42NCA1LjkzSDEzLjA3VjEwLjIxSDExLjY0TTE1LjU3IDUuOTNIMTdWMTAuMjFIMTUuNTdNNyAyTDMuNDMgNS41N1YxOC40M0g3LjcxVjIyTDExLjI5IDE4LjQzSDE0LjE0TDIwLjU3IDEyVjJNMTkuMTQgMTEuMjlMMTYuMjkgMTQuMTRIMTMuNDNMMTAuOTMgMTYuNjRWMTQuMTRINy43MVYzLjQzSDE5LjE0WiIgLz48L3N2Zz4=",
+  "name": "TwitchChatHandler",
+  "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/9b3390372dde84115ffea23c50d571e6bb85bc11f880831a42f46a35f3fc6123_twitch.svg",
+  "shortDescription": "A Simple Chat Handler Where u can See And Manage Your Chat Inside Game",
+  "version": "1.6",
+  "description": [
+    "[WebSocket Client REQUIRED]",
+    "Its Just a Project i made for fun to Let People See Their Chat and interact with it in game",
+    "",
+    "Contains:",
+    "",
+    "-Receives Chat Messages",
+    "",
+    "-Sepatates Automatically Chat Commands from Normal Messages",
+    "",
+    "-Custom Made Behaviors For Text Objects To Display Chat Messages",
+    "",
+    "-Custom Expressions [Username,Message,Command]",
+    "",
+    "-Debug With Server Raw Messages",
+    "",
+    "-Send Messages Back To Chat"
+  ],
+  "tags": [
+    "twitch",
+    "ttv",
+    "twitchchat"
+  ],
+  "authorIds": [
+    "aVxbznV0byYOfcKIQf9WcptYSC43"
+  ],
+  "dependencies": [],
+  "eventsFunctions": [
+    {
+      "fullName": "",
+      "functionType": "Action",
+      "name": "onFirstSceneLoaded",
+      "sentence": "",
+      "events": [],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "fullName": "",
+      "functionType": "Action",
+      "name": "onScenePostEvents",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "WebSocketClient::EventReceived"
+              },
+              "parameters": [
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "DebuggerTools::ConsoleLog"
+              },
+              "parameters": [
+                "\"Message\" + WebSocketClient::Data()",
+                "\"info\"",
+                "\"TwitchChat\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "WebSocketClient::IsConnected"
+              },
+              "parameters": [
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "DebuggerTools::ConsoleLog"
+              },
+              "parameters": [
+                "\"Connected\"",
+                "\"info\"",
+                "\"TwitchChat\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "WebSocketClient::Send"
+                  },
+                  "parameters": [
+                    "",
+                    "\"PASS \" + VariableString(Twitch.Token)",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "WebSocketClient::Send"
+                  },
+                  "parameters": [
+                    "",
+                    "\"NICK \" + VariableString(Twitch.Nick)",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "WebSocketClient::Send"
+                  },
+                  "parameters": [
+                    "",
+                    "\"JOIN \"+\"#\"+VariableString(Twitch.Nick)",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "DebuggerTools::ConsoleLog"
+                  },
+                  "parameters": [
+                    "\"Connected To Chat\"",
+                    "\"info\"",
+                    "\"TwitchChat\""
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Connect Into A Twitch Chat",
+      "fullName": "Connect Into Server",
+      "functionType": "Action",
+      "name": "Connect",
+      "sentence": "Connect Twitch Chat On _PARAM2_ with _PARAM1_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "WebSocketClient::Connect"
+              },
+              "parameters": [
+                "",
+                "\"wss://irc-ws.chat.twitch.tv/\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "DebuggerTools::ConsoleLog"
+              },
+              "parameters": [
+                "\"Connecting To Chat\"",
+                "\"info\"",
+                "\"TwitchChat\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "Twitch.Token",
+                "=",
+                "GetArgumentAsString(\"Token\")"
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "Twitch.Nick",
+                "=",
+                "GetArgumentAsString(\"Username\")"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "WebSocketClient::OnError"
+              },
+              "parameters": [
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "DebuggerTools::ConsoleLog"
+              },
+              "parameters": [
+                "\"Error Encontered: \" + WebSocketClient::LastError()",
+                "\"error\"",
+                "\"TwitchChat\""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Here Is A OAuth Token",
+          "name": "Token",
+          "type": "string"
+        },
+        {
+          "description": "Channel Username",
+          "name": "Username",
+          "type": "string"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "On Message Received",
+      "functionType": "Condition",
+      "name": "OnMessageReceived",
+      "sentence": "On Message Received",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "WebSocketClient::EventReceived"
+              },
+              "parameters": [
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "DebuggerTools::ConsoleLog"
+              },
+              "parameters": [
+                "\"Message\" + WebSocketClient::Data()",
+                "\"info\"",
+                "\"TwitchChat\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetReturnBoolean"
+              },
+              "parameters": [
+                "True"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "A Received Raw Message From Server",
+      "fullName": "Raw Message Received From Server ",
+      "functionType": "StringExpression",
+      "name": "ServerRawMessage",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnString"
+              },
+              "parameters": [
+                "WebSocketClient::Data()"
+              ]
+            }
+          ]
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "A Received Message From Chat",
+      "fullName": "Received Chat Message",
+      "functionType": "StringExpression",
+      "name": "UserChatMessage",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareStrings"
+              },
+              "parameters": [
+                "SubStr(WebSocketClient::Data(), StrFind(WebSocketClient::Data(), \"PRIVMSG\"), 7)",
+                "=",
+                "\"PRIVMSG\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "Twitch.User",
+                "=",
+                "\"@\"+SubStr(WebSocketClient::Data(), 1, StrFind(WebSocketClient::Data(), \"!\")-1)+\":\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "Twitch.ChatFilter",
+                "=",
+                "SubStr(SubStr(WebSocketClient::Data(), StrFind(WebSocketClient::Data(), \"#\"), StrLength(WebSocketClient::Data())), StrFind(SubStr(WebSocketClient::Data(), StrFind(WebSocketClient::Data(), \"#\"), StrLength(WebSocketClient::Data())), \":\")+1, StrLength(SubStr(WebSocketClient::Data(), StrFind(WebSocketClient::Data(), \"#\"), StrLength(WebSocketClient::Data()))))"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetReturnString"
+              },
+              "parameters": [
+                "VariableString(Twitch.User)+VariableString(Twitch.ChatFilter)"
+              ]
+            }
+          ]
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "A Received Message From Chat (Without Username)",
+      "fullName": "Received Chat Message (Without Username)",
+      "functionType": "StringExpression",
+      "name": "OnlyChatMessage",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareStrings"
+              },
+              "parameters": [
+                "SubStr(WebSocketClient::Data(), StrFind(WebSocketClient::Data(), \"PRIVMSG\"), 7)",
+                "=",
+                "\"PRIVMSG\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnString"
+              },
+              "parameters": [
+                "SubStr(SubStr(WebSocketClient::Data(), StrFind(WebSocketClient::Data(), \"#\"), StrLength(WebSocketClient::Data())), StrFind(SubStr(WebSocketClient::Data(), StrFind(WebSocketClient::Data(), \"#\"), StrLength(WebSocketClient::Data())), \":\")+1, StrLength(SubStr(WebSocketClient::Data(), StrFind(WebSocketClient::Data(), \"#\"), StrLength(WebSocketClient::Data()))))"
+              ]
+            }
+          ]
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "A Received Command Message From Chat",
+      "fullName": "Received Command Message",
+      "functionType": "StringExpression",
+      "name": "CommandMessage",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareStrings"
+              },
+              "parameters": [
+                "StrAt(VariableString(Twitch.ChatFilter), 0)",
+                "=",
+                "\"!\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnString"
+              },
+              "parameters": [
+                "SubStr(VariableString(Twitch.ChatFilter), 1, StrLength(VariableString(Twitch.ChatFilter)))"
+              ]
+            }
+          ]
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "User Of Last Received Message From Chat",
+      "fullName": "Username From Last Chat Message",
+      "functionType": "StringExpression",
+      "name": "LastMessageUsername",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareStrings"
+              },
+              "parameters": [
+                "SubStr(WebSocketClient::Data(), StrFind(WebSocketClient::Data(), \"PRIVMSG\"), 7)",
+                "=",
+                "\"PRIVMSG\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnString"
+              },
+              "parameters": [
+                "SubStr(WebSocketClient::Data(), 1, StrFind(WebSocketClient::Data(), \"!\")-1)"
+              ]
+            }
+          ]
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Checks if Message Was A \"!\" Command",
+      "fullName": "If Command Was Received",
+      "functionType": "Condition",
+      "name": "OnCommandReceived",
+      "sentence": "Chat Command Send",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareStrings"
+              },
+              "parameters": [
+                "StrAt(VariableString(Twitch.ChatFilter), 0)",
+                "=",
+                "\"!\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnBoolean"
+              },
+              "parameters": [
+                "True"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Send A Chat Message To Server",
+      "fullName": "Send A Chat Message",
+      "functionType": "Action",
+      "name": "SendChatMessage",
+      "sentence": "Send _PARAM1_ To Chat",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "WebSocketClient::IsConnected"
+              },
+              "parameters": [
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "WebSocketClient::Send"
+              },
+              "parameters": [
+                "",
+                "\"PRIVMSG \"+\"#\"+VariableString(Twitch.Nick)+\" :\"+GetArgumentAsString(\"Message\")",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Message",
+          "name": "Message",
+          "type": "string"
+        }
+      ],
+      "objectGroups": []
+    }
+  ],
+  "eventsBasedBehaviors": [
+    {
+      "description": "Show Your Chat In A Text Easily",
+      "fullName": "Chat Box For Text",
+      "name": "ChatBoxText",
+      "objectType": "TextObject::Text",
+      "eventsFunctions": [
+        {
+          "description": "Prints Last Server Raw Message",
+          "fullName": "Print Raw Message",
+          "functionType": "Action",
+          "name": "PrintRawMessage",
+          "sentence": "Print Raw Message On _PARAM0_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "TwitchChatHandler::ChatBoxText::PropertyScrollType"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "=",
+                    "\"Down Scroll\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "Object",
+                    "+",
+                    "TwitchChatHandler::ServerRawMessage()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Twitch.Messages",
+                    "+",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "TextObject::Text",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxText",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Prints Last Chat (Non Command) Message",
+          "fullName": "Print Message",
+          "functionType": "Action",
+          "name": "PrintMessage",
+          "sentence": "Print Message On _PARAM0_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "\"undefined\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "NewLine()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "StrAt(VariableString(Twitch.ChatFilter), 0)",
+                    "!=",
+                    "\"!\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "TwitchChatHandler::ChatBoxText::PropertyScrollType"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "\"Down Scroll\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "Object",
+                        "+",
+                        "TwitchChatHandler::UserChatMessage()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Twitch.Messages",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "TextObject::Text",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxText",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Prints Last Command Message",
+          "fullName": "Print Command",
+          "functionType": "Action",
+          "name": "PrintCommand",
+          "sentence": "Print Command Input On _PARAM0_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "\"undefined\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "NewLine()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "StrAt(VariableString(Twitch.ChatFilter), 0)",
+                    "=",
+                    "\"!\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "TwitchChatHandler::ChatBoxText::PropertyScrollType"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "\"Down Scroll\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "Object",
+                        "+",
+                        "TwitchChatHandler::UserChatMessage()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Twitch.Messages",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "TextObject::Text",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxText",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "doStepPreEvents",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Twitch.Messages",
+                    ">",
+                    "Object.Behavior::PropertyMaxMessages()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TwitchChatHandler::ChatBoxText::PropertyScrollType"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "=",
+                    "\"Down Scroll\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TwitchChatHandler::ChatBoxText::PropertyAutoDelete"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Twitch.Messages",
+                    "-",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "Object",
+                    "=",
+                    "SubStr(Object.String(), StrFind(Object.String(), NewLine())+1, StrLength(Object.String()))"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "TextObject::Text",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxText",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "propertyDescriptors": [
+        {
+          "value": "Down Scroll",
+          "type": "Choice",
+          "label": "Scroll Type",
+          "description": "Where the Chat will end",
+          "group": "TwitchChat",
+          "extraInformation": [
+            "Down Scroll",
+            "Up Scroll"
+          ],
+          "hidden": true,
+          "name": "ScrollType"
+        },
+        {
+          "value": "true",
+          "type": "Boolean",
+          "label": "Auto Delete",
+          "description": "Auto Deletes Messages From Chat If Too Long",
+          "group": "TwitchChat",
+          "extraInformation": [],
+          "hidden": false,
+          "name": "AutoDelete"
+        },
+        {
+          "value": "6",
+          "type": "Number",
+          "label": "Max Messages",
+          "description": "Max Messages To Show Up If Auto Delete Is On",
+          "group": "TwitchChat",
+          "extraInformation": [],
+          "hidden": false,
+          "name": "MaxMessages"
+        }
+      ],
+      "sharedPropertyDescriptors": []
+    },
+    {
+      "description": "Show Your Chat In A BBText Easily ",
+      "fullName": "Chat Box For BBText",
+      "name": "ChatBoxBBText",
+      "objectType": "BBText::BBText",
+      "eventsFunctions": [
+        {
+          "description": "Prints Last Server Raw Message",
+          "fullName": "Print Raw Message",
+          "functionType": "Action",
+          "name": "PrintRawMessage",
+          "sentence": "Print Raw Message On _PARAM0_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "TwitchChatHandler::ChatBoxBBText::PropertyScrollType"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "=",
+                    "\"Down Scroll\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BBText::SetBBText"
+                  },
+                  "parameters": [
+                    "Object",
+                    "+",
+                    "TwitchChatHandler::ServerRawMessage()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Twitch.Messages",
+                    "+",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "BBText::BBText",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxBBText",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Prints Last Chat (Non Command) Message",
+          "fullName": "Print Message",
+          "functionType": "Action",
+          "name": "PrintMessage",
+          "sentence": "Print Message On _PARAM0_ ",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "\"undefined\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "NewLine()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "StrAt(VariableString(Twitch.ChatFilter), 0)",
+                    "!=",
+                    "\"!\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "TwitchChatHandler::ChatBoxBBText::PropertyScrollType"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "\"Down Scroll\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "BBText::SetBBText"
+                      },
+                      "parameters": [
+                        "Object",
+                        "+",
+                        "TwitchChatHandler::UserChatMessage()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Twitch.Messages",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "BBText::BBText",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxBBText",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Prints Last Command Message",
+          "fullName": "Print Command",
+          "functionType": "Action",
+          "name": "PrintCommand",
+          "sentence": "Print Command Input On _PARAM0_ Modified With _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "\"undefined\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "NewLine()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "StrAt(VariableString(Twitch.ChatFilter), 0)",
+                    "=",
+                    "\"!\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "TwitchChatHandler::ChatBoxBBText::PropertyScrollType"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "\"Down Scroll\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "BBText::SetBBText"
+                      },
+                      "parameters": [
+                        "Object",
+                        "+",
+                        "GetArgumentAsString(\"Modify\") + TwitchChatHandler::UserChatMessage()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Twitch.Messages",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "BBText::BBText",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxBBText",
+              "type": "behavior"
+            },
+            {
+              "description": "BBCode Modifications",
+              "name": "Modify",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "doStepPreEvents",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Twitch.Messages",
+                    ">",
+                    "Object.Behavior::PropertyMaxMessages()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TwitchChatHandler::ChatBoxBBText::PropertyScrollType"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "=",
+                    "\"Down Scroll\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TwitchChatHandler::ChatBoxBBText::PropertyAutoDelete"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Twitch.Messages",
+                    "-",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BBText::SetBBText"
+                  },
+                  "parameters": [
+                    "Object",
+                    "=",
+                    "SubStr(Object.GetBBText(), StrFind(Object.GetBBText(), NewLine())+1, StrLength(Object.GetBBText()))"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "BBText::BBText",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxBBText",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "propertyDescriptors": [
+        {
+          "value": "Down Scroll",
+          "type": "Choice",
+          "label": "Scroll Type",
+          "description": "Where the Chat will end",
+          "group": "TwitchChat",
+          "extraInformation": [
+            "Down Scroll",
+            "Up Scroll"
+          ],
+          "hidden": true,
+          "name": "ScrollType"
+        },
+        {
+          "value": "true",
+          "type": "Boolean",
+          "label": "Auto Delete",
+          "description": "Auto Deletes Messages From Chat If Too Long",
+          "group": "TwitchChat",
+          "extraInformation": [],
+          "hidden": false,
+          "name": "AutoDelete"
+        },
+        {
+          "value": "6",
+          "type": "Number",
+          "label": "Max Messages",
+          "description": "Max Messages To Show Up If Auto Delete Is On",
+          "group": "TwitchChat",
+          "extraInformation": [],
+          "hidden": false,
+          "name": "MaxMessages"
+        }
+      ],
+      "sharedPropertyDescriptors": []
+    },
+    {
+      "description": "Show Your Chat In A Bitmap Text Easily ",
+      "fullName": "Chat Box For BBText",
+      "name": "ChatBoxBitMapText",
+      "objectType": "BitmapText::BitmapTextObject",
+      "eventsFunctions": [
+        {
+          "description": "Prints Last Server Raw Message",
+          "fullName": "Print Raw Message",
+          "functionType": "Action",
+          "name": "PrintRawMessage",
+          "sentence": "Print Raw Message On _PARAM0_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "TwitchChatHandler::ChatBoxBitMapText::PropertyScrollType"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "=",
+                    "\"Down Scroll\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "Object",
+                    "+",
+                    "TwitchChatHandler::ServerRawMessage()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Twitch.Messages",
+                    "+",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "BitmapText::BitmapTextObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxBitMapText",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Prints Last Chat (Non Command) Message",
+          "fullName": "Print Message",
+          "functionType": "Action",
+          "name": "PrintMessage",
+          "sentence": "Print Message On _PARAM0_ ",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "\"undefined\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "NewLine()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "StrAt(VariableString(Twitch.ChatFilter), 0)",
+                    "!=",
+                    "\"!\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "TwitchChatHandler::ChatBoxBitMapText::PropertyScrollType"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "\"Down Scroll\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "BitmapText::BitmapTextObject::SetText"
+                      },
+                      "parameters": [
+                        "Object",
+                        "+",
+                        "TwitchChatHandler::UserChatMessage()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Twitch.Messages",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "BitmapText::BitmapTextObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxBitMapText",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Prints Last Command Message",
+          "fullName": "Print Command",
+          "functionType": "Action",
+          "name": "PrintCommand",
+          "sentence": "Print Command Input On _PARAM0_ Modified With _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "\"undefined\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "NewLine()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "StrAt(VariableString(Twitch.ChatFilter), 0)",
+                    "=",
+                    "\"!\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "TwitchChatHandler::ChatBoxBitMapText::PropertyScrollType"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "\"Down Scroll\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "BitmapText::BitmapTextObject::SetText"
+                      },
+                      "parameters": [
+                        "Object",
+                        "+",
+                        "GetArgumentAsString(\"Modify\") + TwitchChatHandler::UserChatMessage()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Twitch.Messages",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "BitmapText::BitmapTextObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxBitMapText",
+              "type": "behavior"
+            },
+            {
+              "description": "BBCode Modifications",
+              "name": "Modify",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "doStepPreEvents",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Twitch.Messages",
+                    ">",
+                    "Object.Behavior::PropertyMaxMessages()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TwitchChatHandler::ChatBoxBitMapText::PropertyScrollType"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "=",
+                    "\"Down Scroll\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TwitchChatHandler::ChatBoxBitMapText::PropertyAutoDelete"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Twitch.Messages",
+                    "-",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "Object",
+                    "=",
+                    "SubStr(Object.Text(), StrFind(Object.Text(), NewLine())+1, StrLength(Object.Text()))"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "BitmapText::BitmapTextObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxBitMapText",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "propertyDescriptors": [
+        {
+          "value": "Down Scroll",
+          "type": "Choice",
+          "label": "Scroll Type",
+          "description": "Where the Chat will end",
+          "group": "TwitchChat",
+          "extraInformation": [
+            "Down Scroll",
+            "Up Scroll"
+          ],
+          "hidden": true,
+          "name": "ScrollType"
+        },
+        {
+          "value": "true",
+          "type": "Boolean",
+          "label": "Auto Delete",
+          "description": "Auto Deletes Messages From Chat If Too Long",
+          "group": "TwitchChat",
+          "extraInformation": [],
+          "hidden": false,
+          "name": "AutoDelete"
+        },
+        {
+          "value": "6",
+          "type": "Number",
+          "label": "Max Messages",
+          "description": "Max Messages To Show Up If Auto Delete Is On",
+          "group": "TwitchChat",
+          "extraInformation": [],
+          "hidden": false,
+          "name": "MaxMessages"
+        }
+      ],
+      "sharedPropertyDescriptors": []
+    },
+    {
+      "description": "[Not Recommended For Normal Use]\nShow Your Chat In A Text Input... And Edit is if ye want",
+      "fullName": "Chat Box For Text",
+      "name": "ChatBoxTextinput",
+      "objectType": "TextInput::TextInputObject",
+      "eventsFunctions": [
+        {
+          "description": "Prints Last Server Raw Message",
+          "fullName": "Print Raw Message",
+          "functionType": "Action",
+          "name": "PrintRawMessage",
+          "sentence": "Print Raw Message On _PARAM0_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "TwitchChatHandler::ChatBoxTextinput::PropertyScrollType"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "=",
+                    "\"Down Scroll\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextInput::TextInputObject::SetText"
+                  },
+                  "parameters": [
+                    "Object",
+                    "+",
+                    "TwitchChatHandler::ServerRawMessage()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Twitch.Messages",
+                    "+",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "TextInput::TextInputObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxTextinput",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Prints Last Chat (Non Command) Message",
+          "fullName": "Print Message",
+          "functionType": "Action",
+          "name": "PrintMessage",
+          "sentence": "Print Message On _PARAM0_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "\"undefined\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "NewLine()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "StrAt(VariableString(Twitch.ChatFilter), 0)",
+                    "!=",
+                    "\"!\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "TwitchChatHandler::ChatBoxTextinput::PropertyScrollType"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "\"Down Scroll\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextInput::TextInputObject::SetText"
+                      },
+                      "parameters": [
+                        "Object",
+                        "+",
+                        "TwitchChatHandler::UserChatMessage()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Twitch.Messages",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "TextInput::TextInputObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxTextinput",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Prints Last Command Message",
+          "fullName": "Print Command",
+          "functionType": "Action",
+          "name": "PrintCommand",
+          "sentence": "Print Command Input On _PARAM0_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "\"undefined\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "NewLine()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "StrAt(VariableString(Twitch.ChatFilter), 0)",
+                    "=",
+                    "\"!\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "TwitchChatHandler::ChatBoxTextinput::PropertyScrollType"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "\"Down Scroll\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextInput::TextInputObject::SetText"
+                      },
+                      "parameters": [
+                        "Object",
+                        "+",
+                        "TwitchChatHandler::UserChatMessage()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Twitch.Messages",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "TextInput::TextInputObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxTextinput",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "doStepPreEvents",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Twitch.Messages",
+                    ">",
+                    "Object.Behavior::PropertyMaxMessages()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TwitchChatHandler::ChatBoxTextinput::PropertyScrollType"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior",
+                    "=",
+                    "\"Down Scroll\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TwitchChatHandler::ChatBoxTextinput::PropertyAutoDelete"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Twitch.Messages",
+                    "-",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextInput::TextInputObject::SetText"
+                  },
+                  "parameters": [
+                    "Object",
+                    "=",
+                    "SubStr(Object.Text(), StrFind(Object.Text(), NewLine())+1, StrLength(Object.Text()))"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "TextInput::TextInputObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxTextinput",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "propertyDescriptors": [
+        {
+          "value": "Down Scroll",
+          "type": "Choice",
+          "label": "Scroll Type",
+          "description": "Where the Chat will end",
+          "group": "TwitchChat",
+          "extraInformation": [
+            "Down Scroll",
+            "Up Scroll"
+          ],
+          "hidden": true,
+          "name": "ScrollType"
+        },
+        {
+          "value": "true",
+          "type": "Boolean",
+          "label": "Auto Delete",
+          "description": "Auto Deletes Messages From Chat If Too Long",
+          "group": "TwitchChat",
+          "extraInformation": [],
+          "hidden": false,
+          "name": "AutoDelete"
+        },
+        {
+          "value": "6",
+          "type": "Number",
+          "label": "Max Messages",
+          "description": "Max Messages To Show Up If Auto Delete Is On",
+          "group": "TwitchChat",
+          "extraInformation": [],
+          "hidden": false,
+          "name": "MaxMessages"
+        }
+      ],
+      "sharedPropertyDescriptors": []
+    },
+    {
+      "description": "Show Your Chat In A Button Label",
+      "fullName": "Chat Box For Button",
+      "name": "ChatBoxButton",
+      "objectType": "PanelSpriteButton::PanelSpriteButton",
+      "eventsFunctions": [
+        {
+          "description": "Prints Last Server Raw Message",
+          "fullName": "Print Raw Message",
+          "functionType": "Action",
+          "name": "PrintRawMessage",
+          "sentence": "Print Raw Message On _PARAM0_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::SetLabelText"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Object.LabelText() + TwitchChatHandler::ServerRawMessage()",
+                    "Object.LabelText() + TwitchChatHandler::ServerRawMessage()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Twitch.Messages",
+                    "+",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "PanelSpriteButton::PanelSpriteButton",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxButton",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Prints Last Chat (Non Command) Message",
+          "fullName": "Print Message",
+          "functionType": "Action",
+          "name": "PrintMessage",
+          "sentence": "Print Message On _PARAM0_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "\"undefined\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "NewLine()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "StrAt(VariableString(Twitch.ChatFilter), 0)",
+                    "!=",
+                    "\"!\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::SetLabelText"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Object.LabelText() + TwitchChatHandler::UserChatMessage()",
+                    "TwitchChatHandler::UserChatMessage()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Twitch.Messages",
+                    "+",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "PanelSpriteButton::PanelSpriteButton",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxButton",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Prints Last Command Message",
+          "fullName": "Print Command Input",
+          "functionType": "Action",
+          "name": "PrintCommand",
+          "sentence": "Print Command Input On _PARAM0_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "\"undefined\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "TwitchChatHandler::UserChatMessage()",
+                    "!=",
+                    "NewLine()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareStrings"
+                  },
+                  "parameters": [
+                    "StrAt(VariableString(Twitch.ChatFilter), 0)",
+                    "=",
+                    "\"!\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::SetLabelText"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Object.LabelText() + TwitchChatHandler::UserChatMessage()",
+                    "TwitchChatHandler::UserChatMessage()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Twitch.Messages",
+                    "+",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "PanelSpriteButton::PanelSpriteButton",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxButton",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "doStepPreEvents",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "TwitchChatHandler::ChatBoxButton::PropertyAutoDelete"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Twitch.Messages",
+                    ">",
+                    "Object.Behavior::PropertyMaxMessages()"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Twitch.Messages",
+                    "-",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::SetLabelText"
+                  },
+                  "parameters": [
+                    "Object",
+                    "SubStr(Object.LabelText(), StrFind(Object.LabelText(), NewLine())+1, StrLength(Object.LabelText()))",
+                    "SubStr(Object.LabelText(), StrFind(Object.LabelText(), NewLine())+1, StrLength(Object.LabelText()))"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "PanelSpriteButton::PanelSpriteButton",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "TwitchChatHandler::ChatBoxButton",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "propertyDescriptors": [
+        {
+          "value": "true",
+          "type": "Boolean",
+          "label": "Auto Delete",
+          "description": "Auto Deletes Messages From Chat If Too Long",
+          "group": "TwitchChat",
+          "extraInformation": [],
+          "hidden": false,
+          "name": "AutoDelete"
+        },
+        {
+          "value": "6",
+          "type": "Number",
+          "label": "Max Messages",
+          "description": "Max Messages To Show Up If Auto Delete Is On",
+          "group": "TwitchChat",
+          "extraInformation": [],
+          "hidden": false,
+          "name": "MaxMessages"
+        }
+      ],
+      "sharedPropertyDescriptors": []
+    }
+  ],
+  "eventsBasedObjects": []
+}
