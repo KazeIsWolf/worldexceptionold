@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Gamepads__C_Controller_X_is_connected !== "undefined") 
 gdjs.evtsExt__Gamepads__C_Controller_X_is_connected = {};
 
 
-gdjs.evtsExt__Gamepads__C_Controller_X_is_connected.userFunc0xe704d0 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Gamepads__C_Controller_X_is_connected.userFunc0x91e4f8 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 /** @type {Gamepad[]} */
 const gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);
@@ -30,7 +30,7 @@ gdjs.evtsExt__Gamepads__C_Controller_X_is_connected.eventsList0 = function(runti
 {
 
 
-gdjs.evtsExt__Gamepads__C_Controller_X_is_connected.userFunc0xe704d0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Gamepads__C_Controller_X_is_connected.userFunc0x91e4f8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__THNK_P2P__ServerID !== "undefined") {
 gdjs.evtsExt__THNK_P2P__ServerID = {};
 
 
-gdjs.evtsExt__THNK_P2P__ServerID.userFunc0x15eda98 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__THNK_P2P__ServerID.userFunc0x112c3e0 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 eventsFunctionContext.returnValue =
     (runtimeScene.thnkServer && runtimeScene.thnkServer.adapter instanceof THNK.P2PServerAdapter)
@@ -22,7 +22,7 @@ gdjs.evtsExt__THNK_P2P__ServerID.eventsList0 = function(runtimeScene, eventsFunc
 {
 
 
-gdjs.evtsExt__THNK_P2P__ServerID.userFunc0x15eda98(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__THNK_P2P__ServerID.userFunc0x112c3e0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

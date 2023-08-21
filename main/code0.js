@@ -40,7 +40,9 @@ if (isConditionTrue_0) {
 let isConditionTrue_0 = false;
 {
 gdjs.copyArray(runtimeScene.getObjects("NewSprite"), gdjs.IntroCode.GDNewSpriteObjects1);
-{gdjs.evtTools.sound.preloadMusic(runtimeScene, "A Dust In Air - No Time Left Edition.mp3");
+{gdjs.evtTools.sound.preloadMusic(runtimeScene, "The Remains Of A Great Green.mp3");
+}{gdjs.evtTools.sound.preloadMusic(runtimeScene, "A Dust In Air - No Time Left Edition.mp3");
+}{gdjs.evtTools.sound.preloadMusic(runtimeScene, "The Times Below.mp3");
 }{for(var i = 0, len = gdjs.IntroCode.GDNewSpriteObjects1.length ;i < len;++i) {
     gdjs.IntroCode.GDNewSpriteObjects1[i].setOpacity(gdjs.IntroCode.GDNewSpriteObjects1[i].getOpacity() - (1));
 }

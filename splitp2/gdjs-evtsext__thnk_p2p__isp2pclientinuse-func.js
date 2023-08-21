@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__THNK_P2P__IsP2PClientInUse !== "undefined") {
 gdjs.evtsExt__THNK_P2P__IsP2PClientInUse = {};
 
 
-gdjs.evtsExt__THNK_P2P__IsP2PClientInUse.userFunc0x15eda98 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__THNK_P2P__IsP2PClientInUse.userFunc0x942338 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 eventsFunctionContext.returnValue = runtimeScene.thnkClient && runtimeScene.thnkClient.adapter instanceof THNK.P2PClientAdapter;
 
@@ -18,7 +18,7 @@ gdjs.evtsExt__THNK_P2P__IsP2PClientInUse.eventsList0 = function(runtimeScene, ev
 {
 
 
-gdjs.evtsExt__THNK_P2P__IsP2PClientInUse.userFunc0x15eda98(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__THNK_P2P__IsP2PClientInUse.userFunc0x942338(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

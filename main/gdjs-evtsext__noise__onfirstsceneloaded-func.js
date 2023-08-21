@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Noise__onFirstSceneLoaded !== "undefined") {
 gdjs.evtsExt__Noise__onFirstSceneLoaded = {};
 
 
-gdjs.evtsExt__Noise__onFirstSceneLoaded.userFunc0x15eaeb0 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Noise__onFirstSceneLoaded.userFunc0x17ee358 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 gdjs._extensionNoise = gdjs._extensionNoise || {};
 
@@ -648,7 +648,7 @@ gdjs.evtsExt__Noise__onFirstSceneLoaded.eventsList0 = function(runtimeScene, eve
 {
 
 
-gdjs.evtsExt__Noise__onFirstSceneLoaded.userFunc0x15eaeb0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Noise__onFirstSceneLoaded.userFunc0x17ee358(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

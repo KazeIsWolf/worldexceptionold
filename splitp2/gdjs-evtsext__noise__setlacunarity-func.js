@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Noise__SetLacunarity !== "undefined") {
 gdjs.evtsExt__Noise__SetLacunarity = {};
 
 
-gdjs.evtsExt__Noise__SetLacunarity.userFunc0x15fe778 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Noise__SetLacunarity.userFunc0x12eab50 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 const name = eventsFunctionContext.getArgument("Name");
 
@@ -19,7 +19,7 @@ gdjs.evtsExt__Noise__SetLacunarity.eventsList0 = function(runtimeScene, eventsFu
 {
 
 
-gdjs.evtsExt__Noise__SetLacunarity.userFunc0x15fe778(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Noise__SetLacunarity.userFunc0x12eab50(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
