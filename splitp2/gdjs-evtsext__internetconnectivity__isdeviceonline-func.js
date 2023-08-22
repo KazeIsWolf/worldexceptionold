@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__InternetConnectivity__IsDeviceOnline !== "undefined") {
 gdjs.evtsExt__InternetConnectivity__IsDeviceOnline = {};
 
 
-gdjs.evtsExt__InternetConnectivity__IsDeviceOnline.userFunc0xa38fd0 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__InternetConnectivity__IsDeviceOnline.userFunc0xd7f788 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 eventsFunctionContext.returnValue = typeof navigator !== "undefined" && navigator.onLine;
 
@@ -19,7 +19,7 @@ gdjs.evtsExt__InternetConnectivity__IsDeviceOnline.eventsList0 = function(runtim
 {
 
 
-gdjs.evtsExt__InternetConnectivity__IsDeviceOnline.userFunc0xa38fd0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__InternetConnectivity__IsDeviceOnline.userFunc0xd7f788(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

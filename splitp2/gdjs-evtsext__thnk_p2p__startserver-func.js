@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__THNK_P2P__StartServer !== "undefined") {
 gdjs.evtsExt__THNK_P2P__StartServer = {};
 
 
-gdjs.evtsExt__THNK_P2P__StartServer.userFunc0x181cd08 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__THNK_P2P__StartServer.userFunc0x252f6d0 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 THNK.server.startServer(
     new THNK.P2PServerAdapter(),
@@ -22,7 +22,7 @@ gdjs.evtsExt__THNK_P2P__StartServer.eventsList0 = function(runtimeScene, eventsF
 {
 
 
-gdjs.evtsExt__THNK_P2P__StartServer.userFunc0x181cd08(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__THNK_P2P__StartServer.userFunc0x252f6d0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

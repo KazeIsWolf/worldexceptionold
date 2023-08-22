@@ -115,6 +115,7 @@ isConditionTrue_0 = gdjs.evtTools.systemInfo.isPreview(runtimeScene);
 }
 if (isConditionTrue_0) {
 {runtimeScene.getGame().getVariables().getFromIndex(3).setNumber(1);
+}{runtimeScene.getGame().getVariables().getFromIndex(4).setNumber(0);
 }{gdjs.evtTools.variable.setVariableBoolean(runtimeScene.getGame().getVariables().getFromIndex(2), true);
 }}
 
@@ -133,6 +134,7 @@ isConditionTrue_0 = gdjs.evtTools.systemInfo.isPreview(runtimeScene);
 }
 if (isConditionTrue_0) {
 {runtimeScene.getGame().getVariables().getFromIndex(3).setNumber(2);
+}{runtimeScene.getGame().getVariables().getFromIndex(4).setNumber(1);
 }{gdjs.evtTools.variable.setVariableBoolean(runtimeScene.getGame().getVariables().getFromIndex(2), true);
 }}
 

@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__ArrayTools__Join !== "undefined") {
 gdjs.evtsExt__ArrayTools__Join = {};
 
 
-gdjs.evtsExt__ArrayTools__Join.userFunc0xa38ed0 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ArrayTools__Join.userFunc0x247ce98 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 const arr = runtimeScene.getVariables().get(eventsFunctionContext.getArgument("arr"));
 const sep = eventsFunctionContext.getArgument("sep");
@@ -25,7 +25,7 @@ gdjs.evtsExt__ArrayTools__Join.eventsList0 = function(runtimeScene, eventsFuncti
 {
 
 
-gdjs.evtsExt__ArrayTools__Join.userFunc0xa38ed0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ArrayTools__Join.userFunc0x247ce98(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

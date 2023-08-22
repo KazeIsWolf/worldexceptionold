@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Noise__Seed !== "undefined") {
 gdjs.evtsExt__Noise__Seed = {};
 
 
-gdjs.evtsExt__Noise__Seed.userFunc0x13d03f0 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Noise__Seed.userFunc0xd5b468 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 eventsFunctionContext.returnValue = gdjs._extensionNoise.noiseManager.seed;
 };
@@ -17,7 +17,7 @@ gdjs.evtsExt__Noise__Seed.eventsList0 = function(runtimeScene, eventsFunctionCon
 {
 
 
-gdjs.evtsExt__Noise__Seed.userFunc0x13d03f0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Noise__Seed.userFunc0xd5b468(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
