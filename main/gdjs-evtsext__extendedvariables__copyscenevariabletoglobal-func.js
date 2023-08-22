@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__ExtendedVariables__CopySceneVariableToGlobal !== "undef
 gdjs.evtsExt__ExtendedVariables__CopySceneVariableToGlobal = {};
 
 
-gdjs.evtsExt__ExtendedVariables__CopySceneVariableToGlobal.userFunc0x17ee358 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ExtendedVariables__CopySceneVariableToGlobal.userFunc0x1794cc8 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 const sceneVariable = runtimeScene.getVariables().get(eventsFunctionContext.getArgument("sceneVariableName"));
 const globalVariable = runtimeScene.getGame().getVariables().get(eventsFunctionContext.getArgument("globalVariableName"));
@@ -21,7 +21,7 @@ gdjs.evtsExt__ExtendedVariables__CopySceneVariableToGlobal.eventsList0 = functio
 {
 
 
-gdjs.evtsExt__ExtendedVariables__CopySceneVariableToGlobal.userFunc0x17ee358(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ExtendedVariables__CopySceneVariableToGlobal.userFunc0x1794cc8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

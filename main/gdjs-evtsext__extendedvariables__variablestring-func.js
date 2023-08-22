@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__ExtendedVariables__VariableString !== "undefined") {
 gdjs.evtsExt__ExtendedVariables__VariableString = {};
 
 
-gdjs.evtsExt__ExtendedVariables__VariableString.userFunc0x175c868 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ExtendedVariables__VariableString.userFunc0xe01ac0 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 const sceneVariables = runtimeScene.getVariables();
 const variableExist = sceneVariables.has(eventsFunctionContext.getArgument("SceneVariableName"));
@@ -22,7 +22,7 @@ gdjs.evtsExt__ExtendedVariables__VariableString.eventsList0 = function(runtimeSc
 {
 
 
-gdjs.evtsExt__ExtendedVariables__VariableString.userFunc0x175c868(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ExtendedVariables__VariableString.userFunc0xe01ac0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
