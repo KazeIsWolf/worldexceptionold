@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__WebSocketClient__onScenePostEvents !== "undefined") {
 gdjs.evtsExt__WebSocketClient__onScenePostEvents = {};
 
 
-gdjs.evtsExt__WebSocketClient__onScenePostEvents.userFunc0xdc5a10 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__WebSocketClient__onScenePostEvents.userFunc0xd642e8 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 gdjs.evtTools.wsClient.events.pop();
 gdjs.evtTools.wsClient.lastError = "";
@@ -19,7 +19,7 @@ gdjs.evtsExt__WebSocketClient__onScenePostEvents.eventsList0 = function(runtimeS
 {
 
 
-gdjs.evtsExt__WebSocketClient__onScenePostEvents.userFunc0xdc5a10(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__WebSocketClient__onScenePostEvents.userFunc0xd642e8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

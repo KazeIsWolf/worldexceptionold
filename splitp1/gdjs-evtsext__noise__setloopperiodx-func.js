@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__Noise__SetLoopPeriodX !== "undefined") {
 gdjs.evtsExt__Noise__SetLoopPeriodX = {};
 
 
-gdjs.evtsExt__Noise__SetLoopPeriodX.userFunc0x17a7678 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Noise__SetLoopPeriodX.userFunc0x17a68d8 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 const name = eventsFunctionContext.getArgument("Name");
 
@@ -19,7 +19,7 @@ gdjs.evtsExt__Noise__SetLoopPeriodX.eventsList0 = function(runtimeScene, eventsF
 {
 
 
-gdjs.evtsExt__Noise__SetLoopPeriodX.userFunc0x17a7678(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__Noise__SetLoopPeriodX.userFunc0x17a68d8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

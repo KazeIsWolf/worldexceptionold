@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__ArrayTools__Sort !== "undefined") {
 gdjs.evtsExt__ArrayTools__Sort = {};
 
 
-gdjs.evtsExt__ArrayTools__Sort.userFunc0xdbd780 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ArrayTools__Sort.userFunc0xd86808 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 const arr = runtimeScene.getVariables().get(eventsFunctionContext.getArgument("arr"))
 // Cast to array to ensure getAllChildrenArray returns the real array
@@ -27,7 +27,7 @@ gdjs.evtsExt__ArrayTools__Sort.eventsList0 = function(runtimeScene, eventsFuncti
 {
 
 
-gdjs.evtsExt__ArrayTools__Sort.userFunc0xdbd780(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ArrayTools__Sort.userFunc0xd86808(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

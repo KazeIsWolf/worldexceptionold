@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__ExtendedVariables__ModifyGlobalVariable !== "undefined"
 gdjs.evtsExt__ExtendedVariables__ModifyGlobalVariable = {};
 
 
-gdjs.evtsExt__ExtendedVariables__ModifyGlobalVariable.userFunc0xd9a0a0 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ExtendedVariables__ModifyGlobalVariable.userFunc0xddf0b0 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 const variable = runtimeScene.getGame().getVariables().get(eventsFunctionContext.getArgument("GlobalVariableName"));
 variable.setNumber(eventsFunctionContext.getArgument("GlobalVariableValue"));
@@ -18,7 +18,7 @@ gdjs.evtsExt__ExtendedVariables__ModifyGlobalVariable.eventsList0 = function(run
 {
 
 
-gdjs.evtsExt__ExtendedVariables__ModifyGlobalVariable.userFunc0xd9a0a0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ExtendedVariables__ModifyGlobalVariable.userFunc0xddf0b0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__ArrayTools__GetRandomString !== "undefined") {
 gdjs.evtsExt__ArrayTools__GetRandomString = {};
 
 
-gdjs.evtsExt__ArrayTools__GetRandomString.userFunc0x11f5b08 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ArrayTools__GetRandomString.userFunc0x10d4308 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 const arr = runtimeScene
     .getVariables()
@@ -24,7 +24,7 @@ gdjs.evtsExt__ArrayTools__GetRandomString.eventsList0 = function(runtimeScene, e
 {
 
 
-gdjs.evtsExt__ArrayTools__GetRandomString.userFunc0x11f5b08(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ArrayTools__GetRandomString.userFunc0x10d4308(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
