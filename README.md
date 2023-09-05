@@ -12,3 +12,8 @@ Is Your Fate To Lose?
 
 
 Dont think Alone... Find Someone To Help You In Your Journey
+
+
+* PLAY HERE
+
+https://redninjabr.github.io/worldexception/main
