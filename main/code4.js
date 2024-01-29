@@ -14,7 +14,7 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 if (isConditionTrue_0) {
-{gdjs.evtsExt__TwitchChatHandler__Connect.func(runtimeScene, "oauth:mscdrxr14xqakznk4oitd5q142p7os", "redninjabrl", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+{gdjs.evtsExt__TwitchChatHandler__Connect.func(runtimeScene, "", "", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }}
 
 }
