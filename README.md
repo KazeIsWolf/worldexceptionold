@@ -17,6 +17,6 @@ Is Your Fate To Lose?
 Dont think Alone... Find Someone To Help You In Your Journey
 
 
-* [PLAY HERE](https://redninjabr.github.io/worldexceptionold/main)
+* [PLAY HERE](https://kazeiswolf.github.io/worldexceptionold/main)
 
 
